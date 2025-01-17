@@ -11,6 +11,7 @@ local command = {
 	["cs"] = { "csc.exe $filename.cs", "./$filename.exe" },
 	["lua"] = { "lua $filename.lua" },
 	["vue"] = { "npm run dev" },
+	["html"] = { "npx server -d ." },
 }
 
 local extra_command = {
@@ -19,19 +20,19 @@ local extra_command = {
 	["c"] = { "make" },
 	["cpp"] = { "make" },
 	-- ["vue"] = { "npm run tauri dev" },
-	["vue"] = { "npm run tauri android dev" },
+	-- ["vue"] = { "npm run tauri android dev" },
+	["vue"] = { "pnpm dev" },
 }
 
 function M.run_code_f(n)
 	local filetype = vim.fn.expand("%:e")
-	local fileplace = vim.fn.expand("%:h")
+	local fileplace = vim.fn.expand("%:p:h")
 	local file = vim.fn.expand("%:t")
 	local tmp, _ = string.find(string.reverse(file), ".", 1, true)
 	local filename = string.sub(file, 1, tonumber("-" .. tostring(tmp + 1)))
-	local cmd = {}
+	local cmd = { "cd " .. fileplace }
 	--处理普通执行命令
-	if n == "normal" and extra_command[filetype] ~= nil then
-		table.insert(cmd, "cd " .. fileplace)
+	if n == "normal" and command[filetype] ~= nil then
 		for i = 1, #command[filetype] do
 			table.insert(cmd, (string.gsub(command[filetype][i], "$filename", filename)))
 		end

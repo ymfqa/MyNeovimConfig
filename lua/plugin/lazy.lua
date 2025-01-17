@@ -26,7 +26,8 @@ local plugins = {
 	"stevearc/dressing.nvim", --nvim-tree美化新建和重命名文件界面
 	"lewis6991/gitsigns.nvim", -- 左则git提示
 	"stevearc/conform.nvim", --格式化代码插件
-	"max397574/colortils.nvim",
+	"numToStr/Comment.nvim", --注释代码插件
+	"max397574/colortils.nvim", --显示颜色
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, --语法高亮
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" }, --标签页
 	--lsp三件套

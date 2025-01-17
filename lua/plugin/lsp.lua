@@ -14,7 +14,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"clangd",
 		"rust_analyzer",
-		-- "jdtls",
+		"jdtls",
 		"html",
 		"vuels",
 		"ts_ls",
@@ -27,7 +27,9 @@ require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 
 require("lspconfig").pyright.setup({})
 
-require("lspconfig").cssls.setup({})
+require("lspconfig").cssls.setup({
+	filetypes = { "css", "sass", "scss" },
+})
 
 require("lspconfig").clangd.setup({})
 
@@ -41,8 +43,19 @@ require("lspconfig").html.setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig").vuels.setup({})
+require("lspconfig").ts_ls.setup({
+	filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+})
 
-require("lspconfig").ts_ls.setup({})
+require("lspconfig").volar.setup({
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+	init_options = {
+		vue = {
+			hybridMode = false,
+		},
+	},
+})
+
+require("lspconfig").tailwindcss.setup({})
 
 require("lspconfig").omnisharp.setup({})

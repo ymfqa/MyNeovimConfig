@@ -24,8 +24,8 @@ vim.keymap.set("n", "<S-Right>", ":bnext<CR>")
 vim.keymap.set("n", "<S-Left>", ":bprevious<CR>")
 --跳转错误
 vim.keymap.set("n", "<S-K>", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "<S-J>", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "<S-Up>", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<S-J>", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<S-Up>", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "<S-Down>", vim.diagnostic.goto_next)
 --切换窗口(类似tmux)
 vim.keymap.set("n", "<C-Right>", nvim_tmux.NvimTmuxNavigateRight)
@@ -64,3 +64,5 @@ vim.keymap.set("n", "<leader>qq", ":Noice dismiss<CR>")
 vim.keymap.set("n", "<leader>cc", ":Colortils<CR>")
 --打开配置文件
 vim.keymap.set("n", "<leader>cf", open_config.open_config(), { desc = "open config folder" })
+--刷新nvim界面
+vim.keymap.set("n", "<leader>dw", ":redraw<CR>")

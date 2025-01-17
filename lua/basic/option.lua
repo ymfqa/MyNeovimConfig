@@ -34,8 +34,16 @@ vim.opt.clipboard:append("unnamedplus")
 -- 外观
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+--设置历史文件数量
+--'1000：将最近文件记录的最大数量增加到 1000 条。
+-- <50：保存小于 50 KB 的寄存器内容。
+-- s10：保存 10 KB 的搜索历史。
+-- h：禁用高亮历史记录（可选）。
+vim.o.shada = "'1000,<50,s10,h"
 --判断操作系统并更改默认终端
-local which_os = io.popen("uname"):read("*a")
-if string.find(which_os, "MSYS") then
-	vim.opt.shell = "pwsh.exe -nologo"
+local which_os = vim.fn.has("unix")
+if which_os == 0 then
+	vim.opt.shell = "D:\\powershell\\7\\pwsh.exe -nologo"
+	-- vim.o.shell = "D:\\powershell\\7\\pwsh.exe -nologo"
+	-- vim.cmd(":let &shell='pwsh.exe -nologo'")
 end
