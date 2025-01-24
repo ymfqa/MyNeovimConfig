@@ -11,7 +11,7 @@ local command = {
 	["cs"] = { "csc.exe $filename.cs", "./$filename.exe" },
 	["lua"] = { "lua $filename.lua" },
 	["vue"] = { "npm run dev" },
-	["html"] = { "npx server -d ." },
+	["html"] = { "browser-sync start --server --files '**/*.html' --port 14514 --ui-port 14515" },
 }
 
 local extra_command = {

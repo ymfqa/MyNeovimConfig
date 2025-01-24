@@ -37,7 +37,7 @@ require("conform").formatters.prettier = {
 			"--parser",
 			parser,
 			"--html-whitespace-sensitivity",
-			"ignore", -- 忽略 HTML 中的空白符
+			"ignore",
 		}
 	end,
 }

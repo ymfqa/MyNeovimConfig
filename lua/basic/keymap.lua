@@ -4,6 +4,7 @@ local fzf = require("fzf-lua")
 local nvim_tmux = require("nvim-tmux-navigation")
 local run_code = require("plugin.run_code")
 local open_config = require("plugin.open_config")
+local choose_theme = require("plugin.theme")
 -- 窗口
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
@@ -64,5 +65,7 @@ vim.keymap.set("n", "<leader>qq", ":Noice dismiss<CR>")
 vim.keymap.set("n", "<leader>cc", ":Colortils<CR>")
 --打开配置文件
 vim.keymap.set("n", "<leader>cf", open_config.open_config(), { desc = "open config folder" })
+--切换主题
+vim.keymap.set("n", "<leader>th", choose_theme.choose_theme, { desc = "choose theme" })
 --刷新nvim界面
 vim.keymap.set("n", "<leader>dw", ":redraw<CR>")
