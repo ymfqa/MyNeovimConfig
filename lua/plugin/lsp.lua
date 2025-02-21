@@ -16,9 +16,10 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 		"jdtls",
 		"html",
-		"vuels",
+		"volar",
 		"ts_ls",
 		"omnisharp",
+		"tailwindcss",
 	},
 })
 

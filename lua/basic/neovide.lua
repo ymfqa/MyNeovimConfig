@@ -1,9 +1,8 @@
 if vim.g.neovide then
-	vim.o.guifont = "Hack Nerd Font Mono:h14"
+	vim.o.guifont = "ComicShannsMono Nerd Font Mono:h16"
 	vim.g.neovide_transparency = 0.95
 	vim.g.neovide_refresh_rate = 75
 	vim.g.neovide_no_idle = true
-	-- vim.g.neovide_refresh_rate_idle = 15
 	vim.g.neovide_cursor_antialiasing = true
 	vim.g.neovide_confirm_quit = true
 	vim.g.neovide_remember_window_size = true

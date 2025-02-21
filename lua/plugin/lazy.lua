@@ -17,9 +17,13 @@ vim.opt.rtp:prepend(lazypath)
 
 --插件列表
 local plugins = {
+	--主题
 	"folke/tokyonight.nvim", -- tokyonight主题
 	"lunarvim/synthwave84.nvim", --synthwave84主题
 	"gbprod/nord.nvim", --nord主题
+	"rose-pine/neovim", --rose主题
+	"maxmx03/fluoromachine.nvim", --fluoromachine主题
+	--功能插件
 	"nvim-lualine/lualine.nvim", -- 状态栏
 	"nvim-tree/nvim-tree.lua", -- 文档树
 	"nvim-tree/nvim-web-devicons", --文档树图标

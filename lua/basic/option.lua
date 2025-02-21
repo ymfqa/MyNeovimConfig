@@ -43,7 +43,5 @@ vim.o.shada = "'1000,<50,s10,h"
 --判断操作系统并更改默认终端
 local which_os = vim.fn.has("unix")
 if which_os == 0 then
-	vim.opt.shell = "D:\\powershell\\7\\pwsh.exe -nologo"
-	-- vim.o.shell = "D:\\powershell\\7\\pwsh.exe -nologo"
-	-- vim.cmd(":let &shell='pwsh.exe -nologo'")
+	vim.opt.shell = "D:\\powershell\\7\\pwsh.exe"
 end
