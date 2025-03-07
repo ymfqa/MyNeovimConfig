@@ -29,9 +29,7 @@ return function()
                                                     `Y8
                                                       '
 			]]
-	local which_os = io.popen("uname"):read("*a")
 	local opts
-	local isLinux = string.find(which_os, "Linux")
 	opts = {
 		theme = "doom",
 		hide = {
@@ -56,10 +54,10 @@ return function()
 					action = ":lua require('fzf-lua').files()",
 					desc = " Find File",
 					icon = " ",
-					key = "c",
+					key = "f",
 				},
 				{
-					action = (isLinux and { "e ~/.config/nvim/" } or { "e C:\\Users\\ASUS\\AppData\\Local\\nvim" })[1],
+					action = require("plugin.open_config").open_config(),
 					desc = " Config File",
 					icon = " ",
 					key = "c",

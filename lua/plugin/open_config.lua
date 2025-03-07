@@ -4,9 +4,8 @@ local vim = vim
 
 function M.open_config()
 	return function()
-		local which_os = io.popen("uname"):read("*a")
-		local isLinux = string.find(which_os, "Linux")
-		if isLinux then
+		local which_os = vim.fn.has("unix")
+		if which_os ~= 0 then
 			vim.cmd("e ~/.config/nvim/")
 		else
 			vim.cmd("e ~/AppData/Local/nvim/")
