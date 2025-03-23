@@ -28,8 +28,12 @@ require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 
 require("lspconfig").pyright.setup({})
 
+-- 确保从 nvim-cmp 注入补全能力（关键步骤！）
+capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 require("lspconfig").cssls.setup({
-	filetypes = { "css", "sass", "scss" },
+	capabilities = capabilities, -- 必须传递此参数
+	root_dir = require("lspconfig.util").root_pattern(".git", "package.json"),
 })
 
 require("lspconfig").clangd.setup({})
@@ -57,6 +61,15 @@ require("lspconfig").volar.setup({
 	},
 })
 
-require("lspconfig").tailwindcss.setup({})
+-- 禁用 Tailwind 对纯 CSS 文件的支持
+require("lspconfig").tailwindcss.setup({
+	filetypes = {
+		"html",
+		"javascriptreact",
+		"typescriptreact",
+		"vue",
+		"svelte",
+	},
+})
 
 require("lspconfig").omnisharp.setup({})
