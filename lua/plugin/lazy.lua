@@ -33,7 +33,8 @@ local plugins = {
 	"lewis6991/gitsigns.nvim", -- 左则git提示
 	"stevearc/conform.nvim", --格式化代码插件
 	"numToStr/Comment.nvim", --注释代码插件
-	"max397574/colortils.nvim", --显示颜色
+	"max397574/colortils.nvim", --快速输入颜色
+	"brenoprata10/nvim-highlight-colors", --给颜色值提供背景色
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, --语法高亮
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" }, --标签页
 	--lsp三件套
@@ -61,9 +62,6 @@ local plugins = {
 	{
 		"ibhagwan/fzf-lua", --fzf文件搜索插件
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("fzf-lua").setup({})
-		end,
 	},
 	{
 		"windwp/nvim-autopairs", --括号自动补全
