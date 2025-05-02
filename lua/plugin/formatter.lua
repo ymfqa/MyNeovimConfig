@@ -13,6 +13,7 @@ require("conform").setup({
 		json = { "fixjson" },
 		rust = { "rustfmt" },
 		xml = { "xmlformat" },
+		go = { "gofumpt" },
 	},
 	format_on_save = {
 		timeout_ms = 3000,

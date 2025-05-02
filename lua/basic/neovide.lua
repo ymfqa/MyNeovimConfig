@@ -1,9 +1,9 @@
 local vim = vim
 if vim.g.neovide then
 	--字体
-	vim.o.guifont = "DaddyTimeMono Nerd Font Mono:h16"
+	vim.o.guifont = "ComicShannsMono Nerd Font Mono:h16"
 	--背景透明度
-	vim.g.neovide_normal_opacity = 0.9
+	vim.g.neovide_normal_opacity = 0.95
 	--位置动画长度
 	vim.g.neovide_position_animation_length = 0.2
 	--滚动动画长度

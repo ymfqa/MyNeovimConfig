@@ -20,6 +20,7 @@ require("mason-lspconfig").setup({
 		"ts_ls",
 		"omnisharp",
 		"tailwindcss",
+		"gopls",
 	},
 })
 
@@ -60,3 +61,5 @@ require("lspconfig").volar.setup({
 require("lspconfig").tailwindcss.setup({})
 
 require("lspconfig").omnisharp.setup({})
+
+require("lspconfig").gopls.setup({})

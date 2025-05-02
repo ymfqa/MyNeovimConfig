@@ -7,16 +7,17 @@ local command = {
 	["c"] = { "gcc -o $filename $filename.c", "./$filename" },
 	["cpp"] = { "g++ -o $filename $filename.cpp", "./$filename" },
 	["py"] = { "python $filename.py" },
+	["go"] = { "go run $filename.go" },
 	["rs"] = { "rustc $filename.rs", "./$filename" },
 	["cs"] = { "csc.exe $filename.cs", "./$filename.exe" },
 	["lua"] = { "lua $filename.lua" },
 	["vue"] = { "npm run dev" },
-	["html"] = { "browser-sync start --server --files '**/*.html' --port 14514 --ui-port 14515" },
+	["html"] = { "live-server" },
 }
 
 local extra_command = {
 	["java"] = { "mvn spring-boot:run" },
-	["py"] = { "pytest" },
+	["py"] = { "pypy3 $filename.py" },
 	["c"] = { "make" },
 	["cpp"] = { "make" },
 	-- ["vue"] = { "npm run tauri dev" },
