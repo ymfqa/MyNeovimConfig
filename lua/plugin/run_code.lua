@@ -8,6 +8,7 @@ local command = {
 	["cpp"] = { "g++ -o $filename $filename.cpp", "./$filename" },
 	["py"] = { "python $filename.py" },
 	["go"] = { "go run $filename.go" },
+	["js"] = { "node $filename.js" },
 	["rs"] = { "rustc $filename.rs", "./$filename" },
 	["cs"] = { "csc.exe $filename.cs", "./$filename.exe" },
 	["lua"] = { "lua $filename.lua" },

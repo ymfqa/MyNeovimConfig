@@ -3,8 +3,10 @@ local options = {
 	"tokyonight",
 	"tokyonight-night",
 	"synthwave84",
+	"rose-pine",
 	"rose-pine-moon",
 	"fluoromachine",
+	"palenightfall",
 }
 
 local M = {}

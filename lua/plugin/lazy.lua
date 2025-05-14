@@ -23,6 +23,7 @@ local plugins = {
 	"gbprod/nord.nvim", --nord主题
 	"rose-pine/neovim", --rose主题
 	"maxmx03/fluoromachine.nvim", --fluoromachine主题
+	"JoosepAlviste/palenightfall.nvim", --palenightfall主题
 	--功能插件
 	"nvim-lualine/lualine.nvim", -- 状态栏
 	"nvim-tree/nvim-tree.lua", -- 文档树

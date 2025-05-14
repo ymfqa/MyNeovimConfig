@@ -1,4 +1,8 @@
 local vim = vim
+-- 简体中文设置(取消下面三行注释即可)
+-- vim.g.vimcdoc_zh_cn = 1 -- 强制使用简体中文
+-- vim.opt.langmenu = "zh_CN.UTF-8" -- 菜单语言
+-- vim.cmd("language mes zh_CN.UTF-8") -- 错误提示语言
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
