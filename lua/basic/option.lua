@@ -4,8 +4,8 @@ local vim = vim
 -- vim.opt.langmenu = "zh_CN.UTF-8" -- 菜单语言
 -- vim.cmd("language mes zh_CN.UTF-8") -- 错误提示语言
 -- utf8
-vim.g.encoding = "UTF-8"
-vim.o.fileencoding = "utf-8"
+vim.opt.fileencoding = "utf-8" -- 设置文件保存编码为 UTF-8
+vim.opt.encoding = "utf-8" -- 设置 Neovim 内部编码为 UTF-8
 -- jk移动时光标下上方保留4行
 vim.o.scrolloff = 4
 vim.o.sidescrolloff = 4
@@ -47,5 +47,5 @@ vim.o.shada = "'1000,<50,s10,h"
 --判断操作系统并更改默认终端
 local which_os = vim.fn.has("unix")
 if which_os == 0 then
-	vim.opt.shell = "D:\\powershell\\7\\pwsh.exe"
+	vim.opt.shell = "pwsh.exe"
 end

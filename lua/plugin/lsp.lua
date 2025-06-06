@@ -63,3 +63,4 @@ require("lspconfig").tailwindcss.setup({})
 require("lspconfig").omnisharp.setup({})
 
 require("lspconfig").gopls.setup({})
+require("lspconfig").dockerls.setup({})

@@ -7,6 +7,8 @@ local options = {
 	"rose-pine-moon",
 	"fluoromachine",
 	"palenightfall",
+	"onedark",
+	"vaporwave",
 }
 
 local M = {}

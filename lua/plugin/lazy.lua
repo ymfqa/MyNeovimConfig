@@ -24,6 +24,7 @@ local plugins = {
 	"rose-pine/neovim", --rose主题
 	"maxmx03/fluoromachine.nvim", --fluoromachine主题
 	"JoosepAlviste/palenightfall.nvim", --palenightfall主题
+	"olimorris/onedarkpro.nvim", --onedarkpro主题
 	--功能插件
 	"nvim-lualine/lualine.nvim", -- 状态栏
 	"nvim-tree/nvim-tree.lua", -- 文档树
@@ -58,8 +59,6 @@ local plugins = {
 		dependencies = { "rafamadriz/friendly-snippets" },
 	},
 	"saadparwaiz1/cmp_luasnip", --cmp和luasnip的桥梁
-	--fzf两件套
-	{ "junegunn/fzf", build = "./install --bin" }, --fzf_lua前置插件
 	{
 		"ibhagwan/fzf-lua", --fzf文件搜索插件
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -111,6 +110,9 @@ local plugins = {
 		"lukas-reineke/indent-blankline.nvim", --缩进线美化插件
 		main = "ibl",
 		opts = {},
+	},
+	{
+		"chrisgrieser/nvim-scissors", -- 新增代码片段
 	},
 }
 

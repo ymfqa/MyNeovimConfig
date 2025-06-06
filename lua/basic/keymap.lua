@@ -70,3 +70,11 @@ vim.keymap.set("n", "<leader>cf", open_config.open_config(), { desc = "open conf
 vim.keymap.set("n", "<leader>th", choose_theme.choose_theme, { desc = "choose theme" })
 --刷新nvim界面
 vim.keymap.set("n", "<leader>dw", ":redraw<CR>", { desc = "refresh nvim" })
+--编辑snip
+vim.keymap.set("n", "<leader>se", function()
+	require("scissors").editSnippet()
+end, { desc = "Snippet: Edit" })
+--新增snip
+vim.keymap.set({ "n", "x" }, "<leader>sa", function()
+	require("scissors").addNewSnippet()
+end, { desc = "Snippet: Add" })
