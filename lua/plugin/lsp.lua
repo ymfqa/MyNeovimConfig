@@ -9,21 +9,31 @@ require("mason").setup({
 })
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"lua_ls",
+		-- 以下为语言服务器应用
+		"lua-language-server",
 		"pyright",
-		"cssls",
+		"css-lsp",
 		"clangd",
-		"rust_analyzer",
+		"rust-analyzer",
 		"jdtls",
-		"html",
-		"volar",
-		"ts_ls",
+		"html-lsp",
+		"typescript-language-server",
 		"omnisharp",
-		"tailwindcss",
+		"tailwindcss-language-server",
 		"gopls",
+		"dockerls",
+		-- "volar",-- 新版mason给volar删了,看以后会不会加回来吧
+		-- 以下为格式化应用,格式化应用使用这个安装似乎有问题
+		-- "stylua",
+		-- "prettier",
+		-- "black",
+		-- "fixjson",
+		-- "rustfmt",
+		-- "xmlformat",
+		-- "gofumpt",
+		-- "astyle",-- mason一直没给这个加进去,希望以后加
 	},
 })
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities() --导入cmp默认配置
 require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 
@@ -63,4 +73,5 @@ require("lspconfig").tailwindcss.setup({})
 require("lspconfig").omnisharp.setup({})
 
 require("lspconfig").gopls.setup({})
+
 require("lspconfig").dockerls.setup({})

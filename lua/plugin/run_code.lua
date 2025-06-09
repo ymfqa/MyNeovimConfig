@@ -23,7 +23,6 @@ local extra_command = {
 	["c"] = { "make" },
 	["cpp"] = { "make" },
 	-- ["vue"] = { "npm run tauri dev" },
-	-- ["vue"] = { "npm run tauri android dev" },
 	["vue"] = { "pnpm dev" },
 }
 

@@ -59,6 +59,7 @@ local plugins = {
 		dependencies = { "rafamadriz/friendly-snippets" },
 	},
 	"saadparwaiz1/cmp_luasnip", --cmp和luasnip的桥梁
+	"junegunn/fzf", -- fzf二进制本体
 	{
 		"ibhagwan/fzf-lua", --fzf文件搜索插件
 		dependencies = { "nvim-tree/nvim-web-devicons" },

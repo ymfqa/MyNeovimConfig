@@ -21,6 +21,7 @@ require("conform").setup({
 	stop_after_first = true,
 })
 
+-- prettier老默认缩进2个空格,改成4个
 require("conform").formatters.prettier = {
 	args = function()
 		local filetype = vim.bo.filetype
