@@ -10,16 +10,16 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		-- 以下为语言服务器应用
-		"lua-language-server",
+		"lua_ls",
 		"pyright",
-		"css-lsp",
+		"cssls",
 		"clangd",
-		"rust-analyzer",
+		"rust_analyzer",
 		"jdtls",
-		"html-lsp",
-		"typescript-language-server",
+		"html",
+		"ts_ls",
 		"omnisharp",
-		"tailwindcss-language-server",
+		"tailwindcss",
 		"gopls",
 		"dockerls",
 		-- "volar",-- 新版mason给volar删了,看以后会不会加回来吧
