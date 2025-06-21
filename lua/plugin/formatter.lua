@@ -11,6 +11,7 @@ require("conform").setup({
 		c = { "astyle" },
 		cs = { "astyle" },
 		json = { "fixjson" },
+		jsonc = { "fixjson" },
 		rust = { "rustfmt" },
 		xml = { "xmlformat" },
 		go = { "gofumpt" },

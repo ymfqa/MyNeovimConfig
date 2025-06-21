@@ -25,6 +25,7 @@ local plugins = {
 	"maxmx03/fluoromachine.nvim", --fluoromachine主题
 	"JoosepAlviste/palenightfall.nvim", --palenightfall主题
 	"olimorris/onedarkpro.nvim", --onedarkpro主题
+	"catppuccin/nvim", --卡布奇诺主题
 	--功能插件
 	"nvim-lualine/lualine.nvim", -- 状态栏
 	"nvim-tree/nvim-tree.lua", -- 文档树

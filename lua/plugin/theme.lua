@@ -9,6 +9,10 @@ local options = {
 	"palenightfall",
 	"onedark",
 	"vaporwave",
+	"catppuccin-latte",
+	"catppuccin-frappe",
+	"catppuccin-macchiato",
+	"catppuccin-mocha",
 }
 
 local M = {}
