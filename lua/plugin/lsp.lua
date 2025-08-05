@@ -7,71 +7,53 @@ require("mason").setup({
 		},
 	},
 })
+
+local lsp_list = {
+	"lua_ls",
+	"pyright",
+	"cssls",
+	"clangd",
+	"rust_analyzer",
+	"jdtls",
+	"html",
+	"omnisharp",
+	"tailwindcss",
+	"gopls",
+	"dockerls",
+	"vue_ls",
+	"vtsls",
+}
 require("mason-lspconfig").setup({
-	ensure_installed = {
-		-- 以下为语言服务器应用
-		"lua_ls",
-		"pyright",
-		"cssls",
-		"clangd",
-		"rust_analyzer",
-		"jdtls",
-		"html",
-		"ts_ls",
-		"omnisharp",
-		"tailwindcss",
-		"gopls",
-		"dockerls",
-		-- "volar",-- 新版mason给volar删了,看以后会不会加回来吧
-		-- 以下为格式化应用,格式化应用使用这个安装似乎有问题
-		-- "stylua",
-		-- "prettier",
-		-- "black",
-		-- "fixjson",
-		-- "rustfmt",
-		-- "xmlformat",
-		-- "gofumpt",
-		-- "astyle",-- mason一直没给这个加进去,希望以后加
+	automatic_enable = false,
+	ensure_installed = lsp_list,
+})
+vim.lsp.config("vtsls", {
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vim.fn.stdpath("data")
+							.. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+						languages = { "vue" },
+						configNamespace = "typescript",
+					},
+				},
+			},
+		},
 	},
-})
-local capabilities = require("cmp_nvim_lsp").default_capabilities() --导入cmp默认配置
-require("lspconfig").lua_ls.setup({ capabilities = capabilities })
-
-require("lspconfig").pyright.setup({})
-
-require("lspconfig").cssls.setup({
-	filetypes = { "css", "sass", "scss" },
-})
-
-require("lspconfig").clangd.setup({})
-
-require("lspconfig").rust_analyzer.setup({})
-
-require("lspconfig").jdtls.setup({})
-
-capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-require("lspconfig").html.setup({
-	capabilities = capabilities,
-})
-
-require("lspconfig").ts_ls.setup({
-	filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-})
-
-require("lspconfig").volar.setup({
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	init_options = {
-		vue = {
-			hybridMode = false,
+})
+vim.lsp.config("rust_analyzer", {
+	settings = {
+		["rust-analyzer"] = {
+			diagnostics = {
+				enable = false,
+			},
 		},
 	},
 })
-
-require("lspconfig").tailwindcss.setup({})
-
-require("lspconfig").omnisharp.setup({})
-
-require("lspconfig").gopls.setup({})
-
-require("lspconfig").dockerls.setup({})
+for _, i in pairs(lsp_list) do
+	vim.lsp.enable(i)
+end

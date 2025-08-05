@@ -1,16 +1,19 @@
 local vim = vim
 if vim.g.neovide then
 	--字体
-	vim.o.guifont = "ComicShannsMono Nerd Font Mono:h16"
+	vim.o.guifont = "Maple Mono NL NF CN:h16"
 	--背景透明度
 	vim.g.neovide_normal_opacity = 0.9
-	vim.g.neovide_opacity = 0.95
+	vim.g.neovide_opacity = 0.9
+	--浮动窗口模糊程度
+	vim.g.neovide_floating_blur_amount_x = 1.0
+	vim.g.neovide_floating_blur_amount_y = 1.0
 	--位置动画长度
 	vim.g.neovide_position_animation_length = 0.2
 	--滚动动画长度
 	vim.g.neovide_scroll_animation_length = 0.3
 	--刷新率
-	vim.g.neovide_refresh_rate = 70
+	vim.g.neovide_refresh_rate = 75
 	--禁止空闲(我都拿你写代码了你还想闲着?😡)
 	vim.g.neovide_no_idle = true
 	--抗锯齿

@@ -48,21 +48,6 @@ vim.o.shada = "'1000,<50,s10,h"
 local which_os = vim.fn.has("unix")
 -- 看是不是win
 if which_os == 0 then
+	-- vim.opt.shell = "nu.exe"
 	vim.opt.shell = "pwsh.exe"
 end
--- win在退出时删除shada.tmp.x
-vim.api.nvim_create_autocmd("VimLeavePre", {
-	pattern = "*",
-	callback = function()
-		-- 看是不是win
-		if which_os == 0 then
-			local file_path = os.getenv("LOCALAPPDATA") .. "\\nvim-data\\shada\\main.shada.tmp.x"
-			-- 看文件是否存在
-			local file_exist = io.open(file_path, "rb")
-			if file_exist then
-				file_exist:close()
-				os.remove(file_path)
-			end
-		end
-	end,
-})

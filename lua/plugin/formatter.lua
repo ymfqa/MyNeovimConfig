@@ -6,6 +6,7 @@ require("conform").setup({
 		typescript = { "prettier" },
 		html = { "prettier" },
 		vue = { "prettier" },
+		yaml = { "yamlfmt" },
 		java = { "astyle" },
 		cpp = { "astyle" },
 		c = { "astyle" },

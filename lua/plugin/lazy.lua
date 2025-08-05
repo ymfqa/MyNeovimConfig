@@ -119,4 +119,4 @@ local plugins = {
 }
 
 -- 启动 lazy.nvim
-require("lazy").setup(plugins, {})
+require("lazy").setup(plugins)
