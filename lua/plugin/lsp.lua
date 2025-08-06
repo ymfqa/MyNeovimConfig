@@ -1,3 +1,4 @@
+-- 启动mason
 require("mason").setup({
 	ui = {
 		icons = {
@@ -7,7 +8,11 @@ require("mason").setup({
 		},
 	},
 })
-
+require("mason-lspconfig").setup({
+	automatic_enable = false,
+})
+-- 检查必要的lsp和formatter安装了没有,没安装就安上
+local mr = require("mason-registry")
 local lsp_list = {
 	"lua_ls",
 	"pyright",
@@ -23,10 +28,40 @@ local lsp_list = {
 	"vue_ls",
 	"vtsls",
 }
-require("mason-lspconfig").setup({
-	automatic_enable = false,
-	ensure_installed = lsp_list,
-})
+local ensure_list = {
+	--语言服务器
+	"lua-language-server",
+	"pyright",
+	"css-lsp",
+	"clangd",
+	"rust-analyzer",
+	"jdtls",
+	"html-lsp",
+	"omnisharp",
+	"tailwindcss-language-server",
+	"gopls",
+	"dockerfile-language-server",
+	"vue-language-server",
+	"vtsls",
+	--格式化程序
+	"black",
+	"stylua",
+	"prettier",
+	"rustfmt",
+	"fixjson",
+	"xmlformatter",
+	"yamlfmt",
+	"gofumpt",
+	"clang-format",
+}
+-- local mason_list = mr.get_all_package_specs()
+for _, v in pairs(ensure_list) do
+	if not mr.get_package(v):is_installed() or mr.get_package(v):is_installing() then
+		vim.cmd("MasonInstall " .. v)
+	end
+end
+mr = nil
+-- 对vue进行详细配置,sb vue的lsp,不配用不了
 vim.lsp.config("vtsls", {
 	settings = {
 		vtsls = {
@@ -45,15 +80,7 @@ vim.lsp.config("vtsls", {
 	},
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 })
-vim.lsp.config("rust_analyzer", {
-	settings = {
-		["rust-analyzer"] = {
-			diagnostics = {
-				enable = false,
-			},
-		},
-	},
-})
+--启动所有的lsp
 for _, i in pairs(lsp_list) do
 	vim.lsp.enable(i)
 end

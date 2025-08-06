@@ -7,10 +7,10 @@ require("conform").setup({
 		html = { "prettier" },
 		vue = { "prettier" },
 		yaml = { "yamlfmt" },
-		java = { "astyle" },
-		cpp = { "astyle" },
-		c = { "astyle" },
-		cs = { "astyle" },
+		java = { "clang-format" },
+		cpp = { "clang-format" },
+		c = { "clang-format" },
+		cs = { "clang-format" },
 		json = { "fixjson" },
 		jsonc = { "fixjson" },
 		rust = { "rustfmt" },
@@ -23,25 +23,16 @@ require("conform").setup({
 	stop_after_first = true,
 })
 
--- prettier老默认缩进2个空格,改成4个
+-- 缩进2个空格的,改成4个
 require("conform").formatters.prettier = {
-	args = function()
-		local filetype = vim.bo.filetype
-		local parser = "babel"
-		if filetype == "vue" then
-			parser = "vue"
-		elseif filetype == "typescript" or filetype == "javascript" then
-			parser = "babel"
-		elseif filetype == "html" then
-			parser = "html"
-		end
-		return {
-			"--tab-width",
-			"4",
-			"--parser",
-			parser,
-			"--html-whitespace-sensitivity",
-			"ignore",
-		}
-	end,
+	prepend_args = {
+		"--tab-width",
+		"4",
+	},
+}
+require("conform").formatters["clang-format"] = {
+	prepend_args = {
+		"--style",
+		"{BasedOnStyle: Google , IndentWidth: 4}",
+	},
 }
