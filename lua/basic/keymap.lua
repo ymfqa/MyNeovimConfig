@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "close tab" })
 vim.keymap.set("n", "<C-a>", "maggVG", { desc = "select all" })
 vim.keymap.set("v", "<C-a>", "<ESC>'a", { desc = "cancel select all" })
 --lazygit
-vim.keymap.set("n", "<leader>lg", ":terminal<CR>ilazygit<CR>", { desc = "open lazygit" })
+vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "open lazygit" })
 --运行代码(normal)
 vim.keymap.set("n", "<F5>", run_code.run_code("normal"), { desc = "run code normal" })
 --运行代码(extra)

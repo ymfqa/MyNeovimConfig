@@ -13,6 +13,7 @@ require("nvim-treesitter.configs").setup({
 		"css",
 		"scss",
 		"rust",
+		"dart",
 		"markdown",
 		"java",
 		"go",

@@ -1,6 +1,7 @@
 require("plugin.lazy")
 require("basic.option")
 require("basic.keymap")
+require("basic.config")
 require("basic.neovide")
 
 require("plugin.bufferline")

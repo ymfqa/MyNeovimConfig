@@ -116,6 +116,21 @@ local plugins = {
 	{
 		"chrisgrieser/nvim-scissors", -- 新增代码片段
 	},
+	{
+		"kdheepak/lazygit.nvim", --lazygit支持
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 }
 
 -- 启动 lazy.nvim

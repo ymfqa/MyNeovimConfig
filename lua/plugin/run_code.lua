@@ -10,6 +10,7 @@ local command = {
 	["go"] = { "go run $filename.go" },
 	["js"] = { "node $filename.js" },
 	["ts"] = { "node $filename.ts" },
+	["dart"] = { "dart $filename.dart" },
 	["rs"] = { "rustc $filename.rs", "./$filename" },
 	["cs"] = { "csc.exe $filename.cs", "./$filename" },
 	["lua"] = { "lua $filename.lua" },
@@ -22,6 +23,7 @@ local extra_command = {
 	["py"] = { "pypy3 $filename.py" },
 	["c"] = { "make" },
 	["cpp"] = { "make" },
+	["dart"] = { "flutter run" },
 	-- ["vue"] = { "npm run tauri dev" },
 	["vue"] = { "pnpm dev" },
 }
