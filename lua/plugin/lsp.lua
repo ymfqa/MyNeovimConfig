@@ -27,6 +27,9 @@ local lsp_list = {
 	"vue_ls",
 	"vtsls",
 	"dartls",
+	"hyprls",
+	"qmlls",
+	"somesass_ls",
 }
 local function install()
 	local mr = require("mason-registry")
@@ -45,6 +48,9 @@ local function install()
 		"dockerfile-language-server",
 		"vue-language-server",
 		"vtsls",
+		"hyprls",
+		"some-sass-language-server",
+		"qmlls",
 		--格式化程序
 		"black",
 		"stylua",

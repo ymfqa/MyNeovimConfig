@@ -13,6 +13,8 @@ local command = {
 	["dart"] = { "dart $filename.dart" },
 	["rs"] = { "rustc $filename.rs", "./$filename" },
 	["cs"] = { "csc.exe $filename.cs", "./$filename" },
+	["scss"] = { "sass $filename.scss $filename.css" },
+	["sh"] = { "./$filename.sh" },
 	["lua"] = { "lua $filename.lua" },
 	["vue"] = { "npm run dev" },
 	["html"] = { "live-server" },
@@ -21,11 +23,14 @@ local command = {
 local extra_command = {
 	["java"] = { "mvn spring-boot:run" },
 	["py"] = { "pypy3 $filename.py" },
+	["js"] = { "javascript-obfuscator $filename.js --output output_$filename.js --dead-code-injection true" },
 	["c"] = { "make" },
 	["cpp"] = { "make" },
 	["dart"] = { "flutter run" },
+	["go"] = { "swag fmt", "swag init", "go run $filename.go" },
 	-- ["vue"] = { "npm run tauri dev" },
 	["vue"] = { "pnpm dev" },
+	["html"] = { "npx serve" },
 }
 
 function M.run_code_f(n)
@@ -46,7 +51,7 @@ function M.run_code_f(n)
 			table.insert(cmd, (string.gsub(extra_command[filetype][i], "$filename", filename)))
 		end
 	else
-		print("I don't know what's this...")
+		print("我不认识这个文件类型...")
 		return
 	end
 

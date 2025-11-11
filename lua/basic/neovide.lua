@@ -1,7 +1,7 @@
 local vim = vim
 if vim.g.neovide then
 	--字体
-	vim.o.guifont = "Maple Mono NL NF CN:h16"
+	vim.o.guifont = "Maple Mono Normal NL NF CN:h16"
 	--背景透明度
 	vim.g.neovide_normal_opacity = 0.9
 	vim.g.neovide_opacity = 0.9
@@ -9,34 +9,34 @@ if vim.g.neovide then
 	vim.g.neovide_floating_blur_amount_x = 1.0
 	vim.g.neovide_floating_blur_amount_y = 1.0
 	--位置动画长度
-	vim.g.neovide_position_animation_length = 0.2
+	vim.g.neovide_position_animation_length = 0.3
 	--滚动动画长度
-	vim.g.neovide_scroll_animation_length = 0.3
+	vim.g.neovide_scroll_animation_length = 0.25
 	--刷新率
-	vim.g.neovide_refresh_rate = 75
+	vim.g.neovide_refresh_rate = 90
 	--禁止空闲(我都拿你写代码了你还想闲着?😡)
 	vim.g.neovide_no_idle = true
 	--抗锯齿
-	vim.g.neovide_cursor_antialiasing = true
+	vim.g.neovide_cursor_antialiasing = false
 	--未保存时,退出需要确认
 	vim.g.neovide_confirm_quit = true
 	--记住窗口大小
 	vim.g.neovide_remember_window_size = true
 	--动画延迟
-	vim.g.neovide_cursor_animation_length = 0.15
+	vim.g.neovide_cursor_animation_length = 0.13
 	--动画轨迹大小
-	vim.g.neovide_cursor_trail_size = 0.5
+	vim.g.neovide_cursor_trail_size = 0.4
 	--粒子动画类型
 	vim.g.neovide_cursor_vfx_mode = "pixiedust"
 	--粒子不透明度
 	vim.g.neovide_cursor_vfx_opacity = 100
 	--粒子密度
-	vim.g.neovide_cursor_vfx_particle_density = 2.0
+	vim.g.neovide_cursor_vfx_particle_density = 5.0
 	--粒子速度
-	vim.g.neovide_cursor_vfx_particle_speed = 5.0
+	vim.g.neovide_cursor_vfx_particle_speed = 2.0
 	--粒子生命周期
-	vim.g.neovide_cursor_vfx_particle_lifetime = 0.7
-	vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.4
+	vim.g.neovide_cursor_vfx_particle_lifetime = 1
+	vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.5
 	--neovide主题
 	vim.g.neovide_theme = "dark"
 	--改变字体大小

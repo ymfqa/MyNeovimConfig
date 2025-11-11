@@ -40,13 +40,13 @@ return function()
 			center = {
 				{
 					action = "ene | startinsert",
-					desc = " New file",
+					desc = " New File",
 					icon = " ",
 					key = "n",
 				},
 				{
 					action = ":lua require('fzf-lua').oldfiles()",
-					desc = " Recent files",
+					desc = " Recent File",
 					icon = " ",
 					key = "r",
 				},
