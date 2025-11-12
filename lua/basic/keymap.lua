@@ -78,3 +78,7 @@ end, { desc = "Snippet: Edit" })
 vim.keymap.set({ "n", "x" }, "<leader>sa", function()
 	require("scissors").addNewSnippet()
 end, { desc = "Snippet: Add" })
+--切换nvim-tree到当前文件所在的文件夹下面
+vim.keymap.set("n", "<leader>cd", function()
+	require("nvim-tree.api").tree.change_root(vim.fn.expand("%:p:h"))
+end)

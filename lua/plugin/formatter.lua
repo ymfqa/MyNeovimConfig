@@ -18,6 +18,7 @@ require("conform").setup({
 		rust = { "rustfmt" },
 		xml = { "xmlformatter" },
 		go = { "gofumpt" },
+		qml = { "qmlformat" },
 	},
 	format_on_save = {
 		timeout_ms = 3000,
