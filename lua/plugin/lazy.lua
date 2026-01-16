@@ -35,10 +35,9 @@ local plugins = {
 	"stevearc/dressing.nvim", --nvim-tree美化新建和重命名文件界面
 	"lewis6991/gitsigns.nvim", -- 左则git提示
 	"stevearc/conform.nvim", --格式化代码插件
-	"numToStr/Comment.nvim", --注释代码插件
 	"max397574/colortils.nvim", --快速输入颜色
 	"brenoprata10/nvim-highlight-colors", --给颜色值提供背景色
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, --语法高亮
+	{ "nvim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate" }, --语法高亮
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" }, --标签页
 	--lsp三件套
 	{
@@ -100,12 +99,6 @@ local plugins = {
 		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
 	},
 	{
-		"kevinhwang91/nvim-ufo", --折叠代码插件
-		dependencies = {
-			"kevinhwang91/promise-async",
-		},
-	},
-	{
 		"LunarVim/bigfile.nvim", --大文件自动禁用lsp等东西
 	},
 	{
@@ -129,6 +122,12 @@ local plugins = {
 		-- optional for floating window border decoration
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+		},
+	},
+	{
+		"kevinhwang91/nvim-ufo", --折叠代码插件
+		dependencies = {
+			"kevinhwang91/promise-async",
 		},
 	},
 }

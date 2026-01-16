@@ -23,7 +23,7 @@ end
 
 function M.choose_theme()
 	vim.ui.select(options, {
-		prompt = "Theme:",
+		prompt = "主题/Theme:",
 		format_item = function(item)
 			return item
 		end,

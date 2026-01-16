@@ -17,12 +17,15 @@ local command = {
 	["sh"] = { "./$filename.sh" },
 	["lua"] = { "lua $filename.lua" },
 	["vue"] = { "npm run dev" },
-	["html"] = { "live-server" },
+	["jsonc"] = { "waybar" },
+	["html"] = { "live-server -H 127.0.0.1 -p 12138" },
+	["qml"] = { "quickshell" },
 }
 
 local extra_command = {
 	["java"] = { "mvn spring-boot:run" },
-	["py"] = { "pypy3 $filename.py" },
+	-- ["py"] = { "pypy3 $filename.py" },
+	["py"] = { "uv run $filename.py" },
 	["js"] = { "javascript-obfuscator $filename.js --output output_$filename.js --dead-code-injection true" },
 	["c"] = { "make" },
 	["cpp"] = { "make" },
@@ -39,6 +42,7 @@ function M.run_code_f(n)
 	local file = vim.fn.expand("%:t")
 	local tmp, _ = string.find(string.reverse(file), ".", 1, true)
 	local filename = string.sub(file, 1, tonumber("-" .. tostring(tmp + 1)))
+	-- local filename = "'" .. string.sub(file, 1, tonumber("-" .. tostring(tmp + 1))) .. "'"
 	local cmd = { "cd " .. fileplace }
 	--处理普通执行命令
 	if n == "normal" and command[filetype] ~= nil then

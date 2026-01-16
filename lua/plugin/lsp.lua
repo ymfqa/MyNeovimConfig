@@ -111,8 +111,14 @@ vim.lsp.config("html", {
 vim.lsp.config("qmlls", {
 	cmd = { "qmlls", "-I", "/usr/lib/qt6/qml" },
 })
+--py配置一下虚拟环境
+vim.lsp.config("pyright", {
+	settings = {
+		python = {
+			pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
+		},
+	},
+})
 
 --启动所有的lsp
-for _, i in pairs(lsp_list) do
-	vim.lsp.enable(i)
-end
+vim.lsp.enable(lsp_list)
