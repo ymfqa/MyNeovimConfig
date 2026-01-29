@@ -74,6 +74,10 @@ end
 if require("basic.config").data["lsp_install"] then
 	install()
 end
+--给所有项目设置.git为根
+vim.lsp.config("*", {
+	root_markers = { ".git" },
+})
 -- 对vue进行详细配置,sb vue的lsp,不配用不了
 vim.lsp.config("vtsls", {
 	settings = {
@@ -118,6 +122,16 @@ vim.lsp.config("pyright", {
 			pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
 		},
 	},
+	root_markers = { ".git", ".venv" },
+})
+--java
+vim.lsp.config("jdtls", {
+	cmd = {
+		vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/bin/jdtls"),
+		"--jvm-arg=-javaagent:" .. vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/lombok.jar"),
+	},
+	root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" },
+	filetypes = { "java" },
 })
 
 --启动所有的lsp

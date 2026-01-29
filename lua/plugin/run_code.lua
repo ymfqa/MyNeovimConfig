@@ -3,7 +3,7 @@ local M = {}
 local vim = vim
 
 local command = {
-	["java"] = { "javac $filename.java -d ./classFile", "java -classpath ./classFile/ $filename" },
+	["java"] = { "java $filename.java"},
 	["c"] = { "gcc -o $filename $filename.c", "./$filename" },
 	["cpp"] = { "g++ -o $filename $filename.cpp", "./$filename" },
 	["py"] = { "python $filename.py" },
@@ -23,7 +23,8 @@ local command = {
 }
 
 local extra_command = {
-	["java"] = { "mvn spring-boot:run" },
+	["xml"] = { "mvn spring-boot:run" },
+	["java"] = { "javac $filename.java -d ./classFile", "java -classpath ./classFile/ $filename" },
 	-- ["py"] = { "pypy3 $filename.py" },
 	["py"] = { "uv run $filename.py" },
 	["js"] = { "javascript-obfuscator $filename.js --output output_$filename.js --dead-code-injection true" },

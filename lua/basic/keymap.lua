@@ -10,8 +10,10 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "open new window -" }) -- �
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "open new window |" }) -- 垂直新增窗口
 -- 取消高亮
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "cancel highlight" })
---保存并格式化
-vim.keymap.set("n", "<C-s>", ":w!<CR>", { desc = "save file and format" })
+--保存
+vim.keymap.set("n", "<C-s>", ":w!<CR>", { desc = "save file" })
+--格式化
+vim.keymap.set("n", "<leader>fc", require("conform").format, { desc = "format" })
 --打开mason
 vim.keymap.set("n", "<leader>ms", ":Mason<CR>", { desc = "open lsp manager" })
 --打开lazy.nvim
@@ -83,3 +85,5 @@ vim.keymap.set("n", "<leader>cd", function()
 	require("nvim-tree.api").tree.change_root(vim.fn.expand("%:p:h"))
 	vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
 end, { desc = "change dir" })
+--切换窗口
+vim.keymap.set("n", "<leader>w", "<C-w>w", { desc = "switch window" })

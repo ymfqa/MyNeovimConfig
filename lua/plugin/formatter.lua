@@ -20,10 +20,10 @@ require("conform").setup({
 		go = { "gofumpt" },
 		qml = { "qmlformat" },
 	},
-	format_on_save = {
-		timeout_ms = 3000,
-	},
-	stop_after_first = true,
+	-- format_on_save = {
+	-- 	timeout_ms = 3000,
+	-- },
+	-- stop_after_first = true,
 })
 
 -- 缩进2个空格的,改成4个
