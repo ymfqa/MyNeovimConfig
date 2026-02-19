@@ -1,3 +1,7 @@
 {
-	"lsp_install": true
+	"lsp_install": true,
+	"env": {
+		"MOONSHOT_API_KEY": "sk-",
+		"TAVILY_API_KEY": "tvly-"
+	}
 }

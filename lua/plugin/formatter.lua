@@ -19,10 +19,11 @@ require("conform").setup({
 		xml = { "xmlformatter" },
 		go = { "gofumpt" },
 		qml = { "qmlformat" },
+		kdl = { "kdlfmt" },
 	},
-	-- format_on_save = {
-	-- 	timeout_ms = 3000,
-	-- },
+	format_on_save = {
+		timeout_ms = 3000,
+	},
 	-- stop_after_first = true,
 })
 
