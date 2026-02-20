@@ -146,11 +146,11 @@ local plugins = {
 		opts = {
 			instructions_file = "avante.md",
 			-- for example
-			provider = "moonshot",
+			provider = "claude",
 			providers = {
 				moonshot = {
-					endpoint = "https://api.moonshot.cn/v1",
-					model = "kimi-k2-turbo-preview",
+					endpoint = "https://api.ikuncode.cc",
+					model = "claude-sonnet-4-6",
 					timeout = 30000, -- Timeout in milliseconds
 					extra_request_body = {
 						temperature = 0.75,

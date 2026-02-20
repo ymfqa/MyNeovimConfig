@@ -37,6 +37,8 @@ vim.keymap.set("n", "<C-Up>", nvim_tmux.NvimTmuxNavigateUp)
 vim.keymap.set("n", "<C-Down>", nvim_tmux.NvimTmuxNavigateDown)
 --打开搜索框
 vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "open file search" })
+--打开关键词搜索框
+vim.keymap.set("n", "<leader>fk", fzf.live_grep, { desc = "open keyword search" })
 --lsp快捷键
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "goto definition" })
 vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "goto hover" })
