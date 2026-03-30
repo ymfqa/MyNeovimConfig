@@ -3,7 +3,7 @@ local M = {}
 local vim = vim
 
 local command = {
-	["java"] = { "java $filename.java"},
+	["java"] = { "java $filename.java" },
 	["c"] = { "gcc -o $filename $filename.c", "./$filename" },
 	["cpp"] = { "g++ -o $filename $filename.cpp", "./$filename" },
 	["py"] = { "python $filename.py" },
@@ -24,14 +24,14 @@ local command = {
 
 local extra_command = {
 	["xml"] = { "mvn spring-boot:run" },
-	["java"] = { "javac $filename.java -d ./classFile", "java -classpath ./classFile/ $filename" },
+	["java"] = { "javac $filename.java -d ./classFile", 'java -cp "./classFile:./classFile/*" $filename' },
 	-- ["py"] = { "pypy3 $filename.py" },
 	["py"] = { "uv run $filename.py" },
 	["js"] = { "javascript-obfuscator $filename.js --output output_$filename.js --dead-code-injection true" },
 	["c"] = { "make" },
 	["cpp"] = { "make" },
 	["dart"] = { "flutter run" },
-	["go"] = { "swag fmt", "swag init", "go run $filename.go" },
+	["go"] = { "swag fmt", "swag init --parseDependency --parseInternal", "go run $filename.go" },
 	-- ["vue"] = { "npm run tauri dev" },
 	["vue"] = { "pnpm dev" },
 	["html"] = { "npx serve" },

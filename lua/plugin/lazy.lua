@@ -39,6 +39,7 @@ local plugins = {
 	"brenoprata10/nvim-highlight-colors", --给颜色值提供背景色
 	"LunarVim/bigfile.nvim", --大文件自动禁用lsp等东西
 	"chrisgrieser/nvim-scissors", -- 新增代码片段
+	"MagicDuck/grug-far.nvim", --关键词搜索插件
 	{ "nvim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate" }, --语法高亮
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" }, --标签页
 	--lsp三件套
@@ -131,37 +132,6 @@ local plugins = {
 		"kevinhwang91/nvim-ufo", --折叠代码插件
 		dependencies = {
 			"kevinhwang91/promise-async",
-		},
-	},
-	--ai插件
-	{
-		"yetone/avante.nvim",
-		build = vim.fn.has("win32") ~= 0
-				and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-			or "make",
-		event = "VeryLazy",
-		version = false, -- Never set this value to "*"! Never!
-		---@module 'avante'
-		---@type avante.Config
-		opts = {
-			instructions_file = "avante.md",
-			-- for example
-			provider = "claude",
-			providers = {
-				moonshot = {
-					endpoint = "https://api.ikuncode.cc",
-					model = "claude-sonnet-4-6",
-					timeout = 30000, -- Timeout in milliseconds
-					extra_request_body = {
-						temperature = 0.75,
-						max_tokens = 32768,
-					},
-				},
-			},
-		},
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
 		},
 	},
 }
