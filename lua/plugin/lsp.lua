@@ -14,7 +14,6 @@ require("mason-lspconfig").setup({
 -- 检查必要的lsp和formatter安装了没有,没安装就安上
 local lsp_list = {
 	"lua_ls",
-	-- "pyright",
 	"basedpyright",
 	"cssls",
 	"clangd",
@@ -35,7 +34,6 @@ local lsp_list = {
 local ensure_list = {
 	--语言服务器
 	"lua-language-server",
-	-- "pyright",
 	"basedpyright",
 	"css-lsp",
 	"clangd",
@@ -80,6 +78,18 @@ end
 -- vim.lsp.config("*", {
 -- 	root_markers = { ".git" },
 -- })
+--给lua vim相关api配上
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			workspace = {
+				library = {
+					vim.env.VIMRUNTIME,
+				},
+			},
+		},
+	},
+})
 -- 对vue进行详细配置,sb vue的lsp,不配用不了
 vim.lsp.config("vtsls", {
 	settings = {
@@ -117,15 +127,6 @@ vim.lsp.config("html", {
 vim.lsp.config("qmlls", {
 	cmd = { "qmlls", "-I", "/usr/lib/qt6/qml" },
 })
---py配置一下虚拟环境
--- vim.lsp.config("pyright", {
--- 	settings = {
--- 		python = {
--- 			pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
--- 		},
--- 	},
--- 	root_markers = { ".git", ".venv" },
--- })
 --basedpyright配置不要管太多
 vim.lsp.config("basedpyright", {
 	settings = {
@@ -143,6 +144,7 @@ vim.lsp.config("basedpyright", {
 					-- 忽略没有类型注释
 					reportMissingParameterType = "none",
 				},
+				useLibraryCodeForTypes = true,
 			},
 		},
 	},

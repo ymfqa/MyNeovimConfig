@@ -1,7 +1,7 @@
 local vim = vim
 if vim.g.neovide then
 	--字体
-	vim.o.guifont = "Maple Mono Normal NL NF CN:h16"
+	vim.o.guifont = "Maple Mono NL NF CN:h16"
 	-- vim.o.guifont = "CodeNewRoman Nerd Font Mono:h16"
 	-- vim.o.guifont = "ComicShannsMono Nerd Font:h16"
 	--背景透明度
