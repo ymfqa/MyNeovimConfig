@@ -27,6 +27,7 @@ local plugins = {
 	"olimorris/onedarkpro.nvim", --onedarkpro主题
 	"catppuccin/nvim", --卡布奇诺主题
 	--功能插件
+	"smoka7/hop.nvim", -- 快速跳转词汇
 	"nvim-lualine/lualine.nvim", -- 状态栏
 	"nvim-tree/nvim-tree.lua", -- 文档树
 	"nvim-tree/nvim-web-devicons", --文档树图标
@@ -49,10 +50,10 @@ local plugins = {
 		"neovim/nvim-lspconfig", --配置lsp服务
 	},
 	--cmp三件套
-	{
-		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets" },
-	},
+	-- {
+	-- 	"saghen/blink.cmp", -- 更新，但是我懒得配置了
+	-- 	dependencies = { "rafamadriz/friendly-snippets" },
+	-- },
 	{
 		"hrsh7th/nvim-cmp", --cmp自动补全
 		dependencies = {
