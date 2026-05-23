@@ -159,6 +159,15 @@ vim.lsp.config("jdtls", {
 	root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" },
 	filetypes = { "java" },
 })
+-- go-zero框架的配置
+vim.lsp.config("gopls", {
+	settings = {
+		gopls = {
+			analyses = { unusedparams = true },
+			staticcheck = true,
+		},
+	},
+})
 
 --启动所有的lsp
 vim.lsp.enable(lsp_list)

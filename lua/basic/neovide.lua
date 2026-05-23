@@ -41,6 +41,8 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.5
 	--neovide主题
 	vim.g.neovide_theme = "dark"
+	--输入时候隐藏鼠标指针
+	vim.g.neovide_hide_mouse_when_typing = true
 	--改变字体大小
 	vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
 	vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")

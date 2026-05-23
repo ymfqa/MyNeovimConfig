@@ -62,7 +62,7 @@ vim.keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "关掉标签页" })
 --全选
 vim.keymap.set("n", "<C-a>", "maggVG", { desc = "全选" })
 vim.keymap.set("v", "<C-a>", "<ESC>'a", { desc = "取消全选" })
-vim.keymap.set("v", "y", "y<ESC>'a", { desc = "全选复制" })
+-- vim.keymap.set("v", "y", "y<ESC>'a", { desc = "全选复制" })
 --lazygit
 vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "打开lazygit" })
 --运行代码(normal)
